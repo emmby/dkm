@@ -73,9 +73,7 @@ std::vector<std::array<T, N>> random_plusplus(const std::vector<std::array<T, N>
 	assert(data.size() > 0);
 	using input_size_t = typename std::array<T, N>::size_type;
 	std::vector<std::array<T, N>> means;
-	// Using a very simple PRBS generator, parameters selected according to
-	// https://en.wikipedia.org/wiki/Linear_congruential_generator#Parameters_in_common_use
-	std::linear_congruential_engine<uint64_t, 6364136223846793005, 1442695040888963407, UINT64_MAX> rand_engine(seed);
+  std::default_random_engine rand_engine;
 
 	// Select first mean at random from the set
 	{
