@@ -73,7 +73,7 @@ std::vector<std::array<T, N>> random_plusplus(const std::vector<std::array<T, N>
 	assert(data.size() > 0);
 	using input_size_t = typename std::array<T, N>::size_type;
 	std::vector<std::array<T, N>> means;
-  std::default_random_engine rand_engine;
+	std::default_random_engine rand_engine(seed);
 
 	// Select first mean at random from the set
 	{
